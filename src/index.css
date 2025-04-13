@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --subway-green: #009B3A;
+    --subway-yellow: #FFC72C;
+  }
+}
+
+@layer components {
+  .subway-button {
+    @apply bg-[var(--subway-green)] text-white px-4 py-2 rounded-lg 
+           hover:bg-opacity-90 transition-all duration-200 
+           flex items-center gap-2 font-semibold;
+  }
+  
+  .subway-input {
+    @apply w-full p-3 rounded-lg border-2 border-gray-200 
+           focus:border-[var(--subway-green)] focus:ring-2 
+           focus:ring-[var(--subway-green)] focus:ring-opacity-50 
+           transition-all duration-200;
+  }
+  
+  .subway-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden 
+           border border-gray-100;
+  }
+}
+
+@keyframes subway-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-subway-bounce {
+  animation: subway-bounce 1s infinite;
+}
